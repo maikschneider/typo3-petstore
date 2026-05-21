@@ -6,24 +6,22 @@ A demo TYPO3 extension and showcase dataset for [maikschneider/tca-api](https://
 
 ## API endpoints
 
-| Method | Endpoint | Resource |
-|---|---|---|
-| `GET / POST` | `/_api/pets` | Pet collection |
-| `GET / PUT / DELETE` | `/_api/pets/{id}` | Single pet |
-| `GET / POST` | `/_api/categories` | Category collection |
-| `GET / POST` | `/_api/tags` | Tag collection |
-| `GET / POST` | `/_api/orders` | Order collection |
-| `GET / POST` | `/_api/customers` | Customer collection |
+Five resources, full CRUD, all public. API prefix: `/_api/` (configurable via the TCA API site set).
 
-All endpoints are public. Responses are Hydra JSON-LD. The API prefix is configurable via the TCA API site set.
+| Endpoint | `GET` | `POST` | `PUT` | `DELETE` |
+|---|---|---|---|---|
+| `/_api/pets` | list | create | — | — |
+| `/_api/pets/{id}` | show | — | update | delete |
+| `/_api/categories` | list | create | — | — |
+| `/_api/categories/{id}` | show | — | update | delete |
+| `/_api/tags` | list | create | — | — |
+| `/_api/tags/{id}` | show | — | update | delete |
+| `/_api/orders` | list | create | — | — |
+| `/_api/orders/{id}` | show | — | update | delete |
+| `/_api/customers` | list | create | — | — |
+| `/_api/customers/{id}` | show | — | update | delete |
 
-## Requirements
-
-| Dependency | Version |
-|---|---|
-| TYPO3 | `^13.4 \|\| ^14.3` |
-| PHP | `^8.2` |
-| maikschneider/tca-api | `dev-main` |
+All responses are Hydra JSON-LD. Interactive docs: [`/_api/swagger-ui`](https://typo3-petstore.ddev.site/_api/swagger-ui)
 
 ## Demo setup
 
