@@ -22,12 +22,6 @@
 		"maikschneider/tca-api": "dev-api-platform-admin",
 		"typo3/cms-core": "^13.4 || ^14.3"
 	},
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/maikschneider/tca-api"
-		}
-	],
 	"require-dev": {
 		"armin/editorconfig-cli": "^2.1",
 		"ergebnis/composer-normalize": "^2.45",
@@ -41,6 +35,12 @@
 		"typo3/minimal": "^13.4 || ^14.0",
 		"typo3/theme-camino": "^14.3"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/maikschneider/tca-api"
+		}
+	],
 	"autoload": {
 		"psr-4": {
 			"MaikSchneider\\Typo3Petstore\\": "Classes"

@@ -10,18 +10,18 @@ const ENTRYPOINT = window.location.origin + "/_api/";
 const dataProvider = hydraDataProvider({ entrypoint: ENTRYPOINT, useEmbedded: false });
 
 /**
- * Wraps AdminUI to inject SmartListGuesser into every auto-discovered ResourceGuesser.
- */
+* Wraps AdminUI to inject SmartListGuesser into every auto-discovered ResourceGuesser.
+*/
 const SmartAdminUI = ({ children, ...props }: React.ComponentProps<typeof AdminUI>) => {
-  const smartChildren = React.Children.map(children, (child) => {
+const smartChildren = React.Children.map(children, (child) => {
     if (React.isValidElement(child) && (child as React.ReactElement).type === ResourceGuesser) {
-      return React.cloneElement(child as React.ReactElement, { list: SmartListGuesser });
+    return React.cloneElement(child as React.ReactElement, { list: SmartListGuesser });
     }
     return child;
-  });
-  return <AdminUI {...props}>{smartChildren}</AdminUI>;
+});
+return <AdminUI {...props}>{smartChildren}</AdminUI>;
 };
 
 export const App = () => (
-  <HydraAdmin entrypoint={ENTRYPOINT} dataProvider={dataProvider} admin={SmartAdminUI} />
+<HydraAdmin entrypoint={ENTRYPOINT} dataProvider={dataProvider} admin={SmartAdminUI} />
 );

@@ -17,13 +17,13 @@ return [
             SearchFilter::class,
             [
                 'columns' => ['name', 'description'],
-                'match'   => 'partial',
+                'match' => 'partial',
             ],
         ],
     ],
     'security' => [
-        'list'   => AccessRole::PUBLIC,
-        'show'   => AccessRole::PUBLIC,
+        'list' => AccessRole::PUBLIC,
+        'show' => AccessRole::PUBLIC,
         'create' => AccessRole::PUBLIC,
         'update' => AccessRole::PUBLIC,
         'delete' => AccessRole::PUBLIC,

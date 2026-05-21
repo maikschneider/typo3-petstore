@@ -15,17 +15,17 @@ return [
     ],
     'filters' => [
         'status' => ExactFilter::class,
-        'q'      => [
+        'q' => [
             SearchFilter::class,
             [
                 'columns' => ['customer_name', 'customer_email', 'shipping_address'],
-                'match'   => 'partial',
+                'match' => 'partial',
             ],
         ],
     ],
     'security' => [
-        'list'   => AccessRole::PUBLIC,
-        'show'   => AccessRole::PUBLIC,
+        'list' => AccessRole::PUBLIC,
+        'show' => AccessRole::PUBLIC,
         'create' => AccessRole::PUBLIC,
         'update' => AccessRole::PUBLIC,
         'delete' => AccessRole::PUBLIC,

@@ -1,0 +1,16 @@
+base: 'https://typo3-petstore.ddev.site/'
+dependencies:
+  - maikschneider/petstore-api-platform-admin
+languages:
+  -
+    title: English
+    enabled: true
+    locale: en_US.utf8
+    hreflang: ''
+    base: /
+    websiteTitle: ''
+    navigationTitle: ''
+    flag: global
+    languageId: 0
+rootPageId: 1
+websiteTitle: ''
