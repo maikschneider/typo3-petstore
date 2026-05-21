@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:typo3_petstore/Resources/Private/Language/locallang_pet.xlf">
+		<header/>
+		<body>
+			<trans-unit id="title"><source>Pet</source></trans-unit>
+
+			<trans-unit id="name"><source>Name</source></trans-unit>
+			<trans-unit id="latin_name"><source>Scientific Name</source></trans-unit>
+			<trans-unit id="description"><source>Description</source></trans-unit>
+			<trans-unit id="care_notes"><source>Care Notes</source></trans-unit>
+
+			<trans-unit id="price"><source>Price</source></trans-unit>
+			<trans-unit id="weight_kg"><source>Weight (kg)</source></trans-unit>
+			<trans-unit id="stock_quantity"><source>Stock Quantity</source></trans-unit>
+
+			<trans-unit id="status"><source>Status</source></trans-unit>
+			<trans-unit id="status.available"><source>Available</source></trans-unit>
+			<trans-unit id="status.pending"><source>Pending</source></trans-unit>
+			<trans-unit id="status.sold"><source>Sold</source></trans-unit>
+
+			<trans-unit id="category_id"><source>Category</source></trans-unit>
+			<trans-unit id="related_pets"><source>Related Pets</source></trans-unit>
+
+			<trans-unit id="gender"><source>Gender</source></trans-unit>
+			<trans-unit id="gender.male"><source>Male</source></trans-unit>
+			<trans-unit id="gender.female"><source>Female</source></trans-unit>
+			<trans-unit id="gender.unknown"><source>Unknown</source></trans-unit>
+
+			<trans-unit id="is_vaccinated"><source>Vaccinated</source></trans-unit>
+
+			<trans-unit id="features"><source>Features</source></trans-unit>
+			<trans-unit id="features.microchipped"><source>Microchipped</source></trans-unit>
+			<trans-unit id="features.neutered"><source>Neutered</source></trans-unit>
+			<trans-unit id="features.house_trained"><source>House Trained</source></trans-unit>
+			<trans-unit id="features.good_with_kids"><source>Good with Kids</source></trans-unit>
+
+			<trans-unit id="birth_date"><source>Birth Date</source></trans-unit>
+			<trans-unit id="available_from"><source>Available From</source></trans-unit>
+			<trans-unit id="feeding_time"><source>Feeding Time</source></trans-unit>
+
+			<trans-unit id="photos"><source>Photos</source></trans-unit>
+			<trans-unit id="health_certificate"><source>Health Certificate</source></trans-unit>
+
+			<trans-unit id="owner_website"><source>Owner Website</source></trans-unit>
+			<trans-unit id="highlight_color"><source>Highlight Colour</source></trans-unit>
+			<trans-unit id="contact_email"><source>Contact Email</source></trans-unit>
+			<trans-unit id="url_slug"><source>URL Slug</source></trans-unit>
+			<trans-unit id="external_id"><source>External ID</source></trans-unit>
+
+			<trans-unit id="metadata"><source>Metadata</source></trans-unit>
+			<trans-unit id="extra_settings"><source>Extra Settings</source></trans-unit>
+
+			<trans-unit id="categories"><source>System Categories</source></trans-unit>
+			<trans-unit id="tags"><source>Tags</source></trans-unit>
+			<trans-unit id="orders"><source>Orders</source></trans-unit>
+		</body>
+	</file>
+</xliff>

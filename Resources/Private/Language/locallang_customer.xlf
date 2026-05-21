@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:typo3_petstore/Resources/Private/Language/locallang_customer.xlf">
+		<header/>
+		<body>
+			<trans-unit id="title"><source>Customer</source></trans-unit>
+
+			<trans-unit id="username"><source>Username</source></trans-unit>
+			<trans-unit id="first_name"><source>First Name</source></trans-unit>
+			<trans-unit id="last_name"><source>Last Name</source></trans-unit>
+			<trans-unit id="email"><source>Email</source></trans-unit>
+			<trans-unit id="password_hash"><source>Password</source></trans-unit>
+			<trans-unit id="phone"><source>Phone</source></trans-unit>
+			<trans-unit id="address"><source>Address</source></trans-unit>
+
+			<trans-unit id="user_status"><source>Status</source></trans-unit>
+			<trans-unit id="user_status.registered"><source>Registered</source></trans-unit>
+			<trans-unit id="user_status.active"><source>Active</source></trans-unit>
+			<trans-unit id="user_status.suspended"><source>Suspended</source></trans-unit>
+
+			<trans-unit id="loyalty_points"><source>Loyalty Points</source></trans-unit>
+			<trans-unit id="profile_image"><source>Profile Image</source></trans-unit>
+			<trans-unit id="date_of_birth"><source>Date of Birth</source></trans-unit>
+		</body>
+	</file>
+</xliff>

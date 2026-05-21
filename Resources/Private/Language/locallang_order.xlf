@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:typo3_petstore/Resources/Private/Language/locallang_order.xlf">
+		<header/>
+		<body>
+			<trans-unit id="title"><source>Order</source></trans-unit>
+
+			<trans-unit id="pet_id"><source>Pet</source></trans-unit>
+			<trans-unit id="quantity"><source>Quantity</source></trans-unit>
+			<trans-unit id="total_price"><source>Total Price</source></trans-unit>
+
+			<trans-unit id="status"><source>Status</source></trans-unit>
+			<trans-unit id="status.placed"><source>Placed</source></trans-unit>
+			<trans-unit id="status.approved"><source>Approved</source></trans-unit>
+			<trans-unit id="status.delivered"><source>Delivered</source></trans-unit>
+			<trans-unit id="status.cancelled"><source>Cancelled</source></trans-unit>
+
+			<trans-unit id="complete"><source>Complete</source></trans-unit>
+
+			<trans-unit id="customer_name"><source>Customer Name</source></trans-unit>
+			<trans-unit id="customer_email"><source>Customer Email</source></trans-unit>
+			<trans-unit id="customer_phone"><source>Phone</source></trans-unit>
+			<trans-unit id="shipping_address"><source>Shipping Address</source></trans-unit>
+
+			<trans-unit id="ship_date"><source>Ship Date</source></trans-unit>
+			<trans-unit id="delivery_date"><source>Delivery Date</source></trans-unit>
+		</body>
+	</file>
+</xliff>
