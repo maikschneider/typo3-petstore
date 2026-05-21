@@ -1,5 +1,5 @@
 """sys_file"""
-,uid,pid,tstamp,crdate,deleted,storage,type,metadata,identifier,identifier_hash,folder_hash,extension,mime_type,name,sha1,size,creation_date,modification_date
+,uid,pid,tstamp,last_indexed,missing,storage,type,metadata,identifier,identifier_hash,folder_hash,extension,mime_type,name,sha1,size,creation_date,modification_date
 ,1,0,1748073600,1748073600,0,1,2,0,/petstore/Pets/rex.svg,eb7909cb7e4f29c24e1bea6d6b9313562fb20282,7c1f74cbe939aa1bc8ca855c40fd4f1d12fcbe0b,svg,image/svg+xml,rex.svg,b26a429d8b2b88507ea9d2941d520139f08389e7,695,1748073600,1748073600
 ,2,0,1748073600,1748073600,0,1,2,0,/petstore/Pets/luna.svg,d1923e747f298cbf6dd52640369a33469b86832a,7c1f74cbe939aa1bc8ca855c40fd4f1d12fcbe0b,svg,image/svg+xml,luna.svg,3c965f3aaa09fdd1645ea4a2cb120b635eec4e29,694,1748073600,1748073600
 ,3,0,1748073600,1748073600,0,1,2,0,/petstore/Pets/tweety.svg,b945f99d85018252444ceeece9564c2d07de115b,7c1f74cbe939aa1bc8ca855c40fd4f1d12fcbe0b,svg,image/svg+xml,tweety.svg,61632063b61c70e661376e33644c7f79e181cd28,695,1748073600,1748073600
