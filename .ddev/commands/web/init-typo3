@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2086
+set -e
+
+## Description: Initialize TYPO3 petstore installation
+## Usage: init-typo3
+## Example: ddev init-typo3
+
+readonly dbHost="db"
+readonly dbUser="db"
+readonly dbPassword="db"
+readonly dbName="db"
+readonly dbCredentials="-h${dbHost} -u${dbUser} -p${dbPassword}"
+readonly fixturePath="/var/www/html/Tests/Fixtures"
+readonly typo3Binary="/var/www/html/vendor/bin/typo3"
+
+function _progress() {
+    printf "%s... " "$1"
+}
+
+function _done() {
+    printf "\e[32mDone\e[39m\n"
+}
+
+# Create empty database
+_progress "Creating empty database"
+mysql -Nse "SHOW TABLES" $dbCredentials "$dbName" | while read -r table; do
+    mysql -e "SET FOREIGN_KEY_CHECKS=0; DROP TABLE \`${table}\`; SET FOREIGN_KEY_CHECKS=1;" $dbCredentials "$dbName"
+done
+_done
+
+# Prepare setup environment
+export TYPO3_DB_DRIVER=mysqli
+export TYPO3_DB_USERNAME="$dbUser"
+export TYPO3_DB_PASSWORD="$dbPassword"
+export TYPO3_DB_PORT=3306
+export TYPO3_DB_HOST="$dbHost"
+export TYPO3_DB_DBNAME="$dbName"
+export TYPO3_SERVER_TYPE=apache
+export TYPO3_PROJECT_NAME="EXT:typo3_petstore"
+export TYPO3_SETUP_ADMIN_USERNAME="admin"
+export TYPO3_SETUP_ADMIN_PASSWORD="admin1234!"
+export TYPO3_SETUP_ADMIN_EMAIL="admin@example.com"
+
+# Set up TYPO3
+_progress "Setting up TYPO3 installation"
+    "$typo3Binary" setup --no-interaction --force --quiet
+_done
+
+# Import fixture CSV files
+for file in "$fixturePath"/*.csv; do
+    _progress "Importing fixture \"$(basename "$file")\""
+    python3 - "$file" <<'PYEOF' | mysql $dbCredentials "$dbName"
+import csv, sys
+
+with open(sys.argv[1], newline='', encoding='utf-8') as f:
+    rows = list(csv.reader(f))
+
+table   = rows[0][0].strip('"')
+columns = rows[1][1:]
+data    = [r[1:] for r in rows[2:] if len(r) > 1 and any(v.strip() for v in r[1:])]
+
+if not data:
+    sys.exit(0)
+
+col_str = ', '.join('`{}`'.format(c) for c in columns)
+for row in data:
+    vals = ', '.join(
+        "NULL" if v == '' and col in ('crop',) else "'{}'".format(v.replace("'", "''"))
+        for col, v in zip(columns, row)
+    )
+    print('INSERT INTO `{}` ({}) VALUES ({});'.format(table, col_str, vals))
+PYEOF
+    _done
+done
+
+# Copy image fixtures to fileadmin
+_progress "Copying fixture files to fileadmin"
+    mkdir -p /var/www/html/public/fileadmin/petstore
+    cp -r "$fixturePath/Files/petstore" /var/www/html/public/fileadmin/
+_done
+
+echo ""
+echo -e "\e[32mPetstore initialised.\e[39m"
+echo "  Backend: https://typo3-petstore.ddev.site/typo3"
+echo "  Login:   admin / admin1234!"
+echo "  API:     https://typo3-petstore.ddev.site/_api/"

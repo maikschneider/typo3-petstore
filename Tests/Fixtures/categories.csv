@@ -1,0 +1,9 @@
+"""tx_typo3petstore_domain_model_category"""
+,uid,pid,tstamp,crdate,deleted,hidden,name,description,badge_color,sort_order,icon,parent_category
+,1,1,1748073600,1748073600,0,0,Dogs,Loyal and energetic companions for active families and individuals.,#B45309,1,0,0
+,2,1,1748073600,1748073600,0,0,Cats,Independent yet affectionate — ideal for home and apartment living.,#7C3AED,2,0,0
+,3,1,1748073600,1748073600,0,0,Birds,Colourful and intelligent pets that bring music into your home.,#065F46,3,0,0
+,4,1,1748073600,1748073600,0,0,Fish,Low-maintenance and peaceful — perfect for any living space.,#1D4ED8,4,0,0
+,5,1,1748073600,1748073600,0,0,Small Animals,Rabbits hamsters guinea pigs and more — great for smaller spaces.,#DC2626,5,0,0
+,6,1,1748073600,1748073600,0,0,Reptiles,Fascinating cold-blooded pets for experienced keepers.,#047857,6,0,0
+,7,1,1748073600,1748073600,0,0,Insects & Spiders,Exotic invertebrates for specialist hobbyists.,#92400E,7,0,0

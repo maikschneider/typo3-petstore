@@ -1,0 +1,16 @@
+"""tx_typo3petstore_domain_model_tag"""
+,uid,pid,tstamp,crdate,deleted,hidden,name,color,description
+,1,1,1748073600,1748073600,0,0,Family Friendly,#10B981,Great with children and other pets
+,2,1,1748073600,1748073600,0,0,Hypoallergenic,#6366F1,Suitable for people with allergies
+,3,1,1748073600,1748073600,0,0,Outdoor,#F59E0B,Loves outdoor activities and exercise
+,4,1,1748073600,1748073600,0,0,Indoor,#3B82F6,Well suited to indoor life
+,5,1,1748073600,1748073600,0,0,Beginner Friendly,#EC4899,Easy to care for — ideal first pet
+,6,1,1748073600,1748073600,0,0,Rare Breed,#8B5CF6,Uncommon breed not often seen in stores
+,7,1,1748073600,1748073600,0,0,Vaccinated,#14B8A6,Up to date with all recommended vaccinations
+,8,1,1748073600,1748073600,0,0,Neutered,#F97316,Already neutered before rehoming
+,9,1,1748073600,1748073600,0,0,Senior,#9CA3AF,Older animal seeking a calm and patient home
+,10,1,1748073600,1748073600,0,0,Puppy / Kitten,#FCD34D,Young animal under 12 months old
+,11,1,1748073600,1748073600,0,0,Rescue,#F87171,Rehomed from a shelter or difficult situation
+,12,1,1748073600,1748073600,0,0,Show Quality,#A78BFA,Meets breed standard for competitions and exhibitions
+,13,1,1748073600,1748073600,0,0,Apartment Friendly,#34D399,Well suited to smaller homes and urban living
+,14,1,1748073600,1748073600,0,0,Low Maintenance,#60A5FA,Minimal daily care requirements — ideal for busy owners

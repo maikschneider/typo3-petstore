@@ -3,6 +3,3 @@ services:
         autowire: true
         autoconfigure: true
         public: false
-
-    MaikSchneider\Typo3Petstore\:
-        resource: '../Classes/*'

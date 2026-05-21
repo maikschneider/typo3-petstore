@@ -1,0 +1,10 @@
+"""tx_typo3petstore_domain_model_customer"""
+,uid,pid,tstamp,crdate,deleted,hidden,username,first_name,last_name,email,phone,address,user_status,profile_image
+,1,1,1748073600,1748073600,0,0,johndoe,John,Doe,john.doe@example.com,+49 351 111 2233,"Musterstraße 1, 01234 Dresden",1,1
+,2,1,1748073600,1748073600,0,0,janesmith,Jane,Smith,jane.smith@example.com,+49 89 444 5566,"Ludwigstraße 10, 80539 München",1,1
+,3,1,1748073600,1748073600,0,0,peterlang,Peter,Lang,peter.lang@example.com,+49 40 777 8899,"Alsterchaussee 3, 20149 Hamburg",0,1
+,4,1,1748073600,1748073600,0,0,annamueller,Anna,Müller,anna.mueller@example.com,+49 30 222 3344,"Friedrichstraße 50, 10117 Berlin",1,1
+,5,1,1748073600,1748073600,0,0,thomasweber,Thomas,Weber,thomas.weber@example.com,+49 211 333 4455,"Königsallee 20, 40212 Düsseldorf",1,1
+,6,1,1748073600,1748073600,0,0,mariaschmidt,Maria,Schmidt,maria.schmidt@example.com,+49 69 444 5566,"Zeil 106, 60313 Frankfurt am Main",1,1
+,7,1,1748073600,1748073600,0,0,klausbauer,Klaus,Bauer,klaus.bauer@example.com,+49 911 555 6677,"Königstraße 50, 90402 Nürnberg",2,1
+,8,1,1748073600,1748073600,0,0,sofiarossi,Sofia,Rossi,sofia.rossi@example.com,+39 02 666 7788,"Via della Vigna Nuova 18, 50123 Florence",0,1
