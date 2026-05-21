@@ -1,0 +1,3 @@
+"pages"
+,uid,pid,tstamp,crdate,deleted,hidden,title,slug,doktype,is_siteroot,backend_layout,backend_layout_next_level,sys_language_uid,l10n_parent,perms_userid,perms_groupid,perms_user,perms_group,perms_everybody
+,1,0,1748073600,1748073600,0,0,Petstore,/,1,1,pagets__CaminoStartpage,pagets__CaminoContentpage,0,0,1,0,31,31,1
