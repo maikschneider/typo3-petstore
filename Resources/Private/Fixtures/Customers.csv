@@ -1,0 +1,4 @@
+uid_ref,username,first_name,last_name,email,phone,address,user_status
+johndoe,johndoe,John,Doe,john.doe@example.com,+49 351 111 2233,"Musterstraße 1, 01234 Dresden",1
+janesmith,janesmith,Jane,Smith,jane.smith@example.com,+49 89 444 5566,"Ludwigstraße 10, 80539 München",1
+peterlang,peterlang,Peter,Lang,peter.lang@example.com,+49 40 777 8899,"Alsterchaussee 3, 20149 Hamburg",0

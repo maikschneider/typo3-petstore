@@ -1,0 +1,5 @@
+uid_ref,pet_uid_ref,customer_name,customer_email,customer_phone,status,quantity,total_price,shipping_address
+order-1,rex,John Doe,john.doe@example.com,+49 351 111 2233,delivered,1,450.00,"Musterstraße 1, 01234 Dresden"
+order-2,luna,Jane Smith,jane.smith@example.com,+49 89 444 5566,approved,1,180.00,"Ludwigstraße 10, 80539 München"
+order-3,tweety,Peter Lang,peter.lang@example.com,+49 40 777 8899,placed,2,90.00,"Alsterchaussee 3, 20149 Hamburg"
+order-4,fluffy,Jane Smith,jane.smith@example.com,+49 89 444 5566,approved,1,65.00,"Ludwigstraße 10, 80539 München"
