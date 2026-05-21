@@ -11,6 +11,9 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Resource\Exception\FileDoesNotExistException;
+use TYPO3\CMS\Core\Resource\Folder;
+use TYPO3\CMS\Core\Resource\StorageRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 #[AsCommand(
@@ -19,8 +22,11 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 )]
 class SetupDataCommand extends Command
 {
+    private ?Folder $imageFolder = null;
+
     public function __construct(
         private readonly ConnectionPool $connectionPool,
+        private readonly StorageRepository $storageRepository,
     ) {
         parent::__construct();
     }
@@ -50,6 +56,8 @@ class SetupDataCommand extends Command
             $io->text(sprintf('Importing into existing folder pid=%d', $pid));
         }
 
+        $this->imageFolder = $this->resolveImageFolder($io);
+
         $io->section('Categories');
         $categoryMap = $this->importCategories($pid, $io);
 
@@ -65,10 +73,7 @@ class SetupDataCommand extends Command
         $io->section('Orders');
         $this->importOrders($pid, $petMap, $io);
 
-        $io->success(sprintf(
-            'Import complete. All records created in pid=%d.',
-            $pid
-        ));
+        $io->success(sprintf('Import complete. All records created in pid=%d.', $pid));
 
         return Command::SUCCESS;
     }
@@ -146,13 +151,18 @@ class SetupDataCommand extends Command
                 );
             }
 
+            $imgRef = $row['uid_ref'];
+            $imgPath = "EXT:typo3_petstore/Resources/Private/Fixtures/Images/Pets/{$imgRef}.svg";
+            $photos = $this->attachImage($uid, 'tx_typo3petstore_domain_model_pet', 'photos', $imgPath, $pid);
+
             $map[$row['uid_ref']] = $uid;
             $io->text(sprintf(
-                '  <info>+</info> %-20s [%s] uid=%-4d tags=%d',
+                '  <info>+</info> %-20s [%s] uid=%-4d tags=%d img=%s',
                 $row['name'],
                 $row['status'],
                 $uid,
-                count($tagUids)
+                count($tagUids),
+                $photos ? 'yes' : 'no'
             ));
         }
         return $map;
@@ -171,7 +181,17 @@ class SetupDataCommand extends Command
                 'address' => $row['address'],
                 'user_status' => (int)$row['user_status'],
             ]);
-            $io->text(sprintf('  <info>+</info> %s %s (uid=%d)', $row['first_name'], $row['last_name'], $uid));
+
+            $imgPath = "EXT:typo3_petstore/Resources/Private/Fixtures/Images/Customers/{$row['username']}.svg";
+            $img = $this->attachImage($uid, 'tx_typo3petstore_domain_model_customer', 'profile_image', $imgPath, $pid);
+
+            $io->text(sprintf(
+                '  <info>+</info> %s %s (uid=%d) img=%s',
+                $row['first_name'],
+                $row['last_name'],
+                $uid,
+                $img ? 'yes' : 'no'
+            ));
         }
     }
 
@@ -198,6 +218,85 @@ class SetupDataCommand extends Command
                 $row['status'],
                 $petUid
             ));
+        }
+    }
+
+    /**
+     * Copies an image fixture into the FAL fileadmin/petstore/ folder and creates
+     * a sys_file_reference linking it to the given record field.
+     * Returns true on success; false when no FAL storage is available or the
+     * fixture image does not exist.
+     */
+    private function attachImage(
+        int $foreignUid,
+        string $tableName,
+        string $fieldName,
+        string $extPath,
+        int $pid,
+    ): bool {
+        if ($this->imageFolder === null) {
+            return false;
+        }
+
+        $localPath = GeneralUtility::getFileAbsFileName($extPath);
+        if (!is_file($localPath)) {
+            return false;
+        }
+
+        $fileName = basename($localPath);
+        $storage = $this->imageFolder->getStorage();
+
+        try {
+            $folderPath = $this->imageFolder->getIdentifier();
+            $file = $storage->hasFile($folderPath . $fileName)
+                ? $storage->getFile($folderPath . $fileName)
+                : $storage->addFile($localPath, $this->imageFolder, $fileName);
+        } catch (\Exception) {
+            return false;
+        }
+
+        $now = time();
+        $this->connectionPool->getConnectionForTable('sys_file_reference')->insert(
+            'sys_file_reference',
+            [
+                'uid_local' => $file->getUid(),
+                'uid_foreign' => $foreignUid,
+                'tablenames' => $tableName,
+                'fieldname' => $fieldName,
+                'table_local' => 'sys_file',
+                'sorting_foreign' => 1,
+                'pid' => $pid,
+                'tstamp' => $now,
+                'crdate' => $now,
+                'hidden' => 0,
+                'deleted' => 0,
+            ]
+        );
+
+        $this->connectionPool->getConnectionForTable($tableName)->update(
+            $tableName,
+            [$fieldName => 1],
+            ['uid' => $foreignUid]
+        );
+
+        return true;
+    }
+
+    private function resolveImageFolder(SymfonyStyle $io): ?Folder
+    {
+        $storage = $this->storageRepository->findByUid(1);
+        if ($storage === null) {
+            $io->warning('FAL storage uid=1 (fileadmin) not found — images will be skipped.');
+            return null;
+        }
+
+        try {
+            return $storage->hasFolder('/petstore/')
+                ? $storage->getFolder('/petstore/')
+                : $storage->createFolder('petstore');
+        } catch (\Exception $e) {
+            $io->warning(sprintf('Could not resolve FAL image folder: %s', $e->getMessage()));
+            return null;
         }
     }
 
