@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#059669">
+  <!-- Paw print: four toe pads + main pad -->
+  <ellipse cx="7" cy="11" rx="3.5" ry="4.5"/>
+  <ellipse cx="13" cy="7" rx="3.5" ry="4.5"/>
+  <ellipse cx="19" cy="7" rx="3.5" ry="4.5"/>
+  <ellipse cx="25" cy="11" rx="3.5" ry="4.5"/>
+  <ellipse cx="16" cy="22" rx="9" ry="7"/>
+</svg>

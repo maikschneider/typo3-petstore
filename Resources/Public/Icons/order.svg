@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Receipt with torn bottom edge -->
+  <path fill="#D97706" d="M6 2 L26 2 L26 27 L23 24.5 L20 27 L17 24.5 L14 27 L11 24.5 L8 27 L6 27 Z"/>
+  <!-- Receipt lines -->
+  <rect x="10" y="8"  width="12" height="2" rx="1" fill="white"/>
+  <rect x="10" y="13" width="8"  height="2" rx="1" fill="white"/>
+  <rect x="10" y="18" width="10" height="2" rx="1" fill="white"/>
+</svg>

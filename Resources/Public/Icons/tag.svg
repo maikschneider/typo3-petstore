@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Price tag: rectangular body with right-pointing arrow -->
+  <path fill="#7C3AED" d="M3 9 L19 9 Q21 9 22 11 L30 16 L22 21 Q21 23 19 23 L3 23 Q1 23 1 21 L1 11 Q1 9 3 9 Z"/>
+  <!-- Hole for the string -->
+  <circle cx="6.5" cy="16" r="2.5" fill="white"/>
+</svg>
