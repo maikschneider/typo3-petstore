@@ -1,0 +1,19 @@
+uid_ref,parent_uid_ref,title,doktype,slug,nav_hide,description
+home,ROOT,Petstore,1,/,0,Welcome to Happy Paws Petstore
+about,home,About Us,1,/about,0,Learn about our mission and team
+pets,home,Our Pets,1,/pets,0,Browse our full selection of animals
+pets-dogs,pets,Dogs,1,/pets/dogs,0,Loyal and loving dog companions
+pets-cats,pets,Cats,1,/pets/cats,0,Independent and affectionate cats
+pets-birds,pets,Birds,1,/pets/birds,0,Colourful and cheerful birds
+pets-fish,pets,Fish,1,/pets/fish,0,Peaceful freshwater and marine fish
+pets-small,pets,Small Animals,1,/pets/small-animals,0,Rabbits hamsters and more
+adopt,home,Adopt a Pet,1,/adopt,0,Give a rescued animal a forever home
+services,home,Services,1,/services,0,Professional pet care services
+services-grooming,services,Grooming,1,/services/grooming,0,Full grooming packages for all breeds
+services-vet,services,Veterinary,1,/services/veterinary,0,On-site vet consultations and check-ups
+services-training,services,Training,1,/services/training,0,Obedience and behaviour training courses
+contact,home,Contact,1,/contact,0,Find us or get in touch
+blog,home,Blog,1,/blog,0,Tips stories and pet care advice
+legal,home,Legal,1,/legal,1,Legal information
+legal-privacy,legal,Privacy Policy,1,/legal/privacy-policy,1,Data protection and privacy
+legal-imprint,legal,Imprint,1,/legal/imprint,1,Legal notice and publisher information
