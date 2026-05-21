@@ -1,0 +1,85 @@
+{
+	"name": "maikschneider/typo3-petstore",
+	"description": "TYPO3 petstore demo extension — showcases all TCA field types and relation patterns via the classic Swagger Petstore domain model.",
+	"license": "GPL-2.0-or-later",
+	"type": "typo3-cms-extension",
+	"keywords": [
+		"typo3",
+		"typo3-cms-extension",
+		"tca",
+		"demo",
+		"petstore"
+	],
+	"authors": [
+		{
+			"name": "Maik Schneider",
+			"email": "schneider.maik@me.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": "^8.2",
+		"typo3/cms-core": "^13.4 || ^14.3"
+	},
+	"require-dev": {
+		"armin/editorconfig-cli": "^2.1",
+		"ergebnis/composer-normalize": "^2.45",
+		"friendsofphp/php-cs-fixer": "^3.12",
+		"phpstan/extension-installer": "^1.3",
+		"saschaegerer/phpstan-typo3": "^3.0",
+		"typo3/cms-filelist": "^13.4 || ^14.0",
+		"typo3/cms-lowlevel": "^13.4 || ^14.0",
+		"typo3/cms-setup": "^13.4 || ^14.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"MaikSchneider\\Typo3Petstore\\": "Classes"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"ergebnis/composer-normalize": true,
+			"phpstan/extension-installer": true,
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		},
+		"lock": false,
+		"vendor-dir": "vendor"
+	},
+	"extra": {
+		"typo3/cms": {
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"extension-key": "typo3_petstore",
+			"web-dir": "public"
+		}
+	},
+	"scripts": {
+		"ci:composer:normalize": "@composer normalize --no-check-lock --dry-run",
+		"ci:editorconfig:lint": "ec --strict --git-only -n",
+		"ci:php:fixer": "php-cs-fixer --config=php-cs-fixer.php fix --dry-run --format=checkstyle > php-cs-fixer.xml || true",
+		"ci:php:lint": "find *.php . -name '*.php' ! -path './vendor/*' ! -path './var/*' ! -path '*node_modules/*' ! -path '*public/*' -print0 | xargs -0 -n 1 -P 4 php -l",
+		"ci:php:stan": "phpstan --no-progress --error-format=checkstyle > phpstan.xml || true",
+		"ci:sca": [
+			"@ci:composer:normalize",
+			"@ci:editorconfig:lint",
+			"@ci:php:lint",
+			"@ci:php:fixer",
+			"@ci:php:stan"
+		],
+		"ci:yaml:lint": "find ./ ! -path './vendor/*' ! -path '*/node_modules/*' \\( -name '*.yaml' -o -name '*.yml' \\) | xargs -r yaml-lint",
+		"composer:normalize": "@composer normalize --no-check-lock",
+		"editorconfig:lint": "ec --strict --fix --git-only -n",
+		"php:fixer": "php-cs-fixer --config=php-cs-fixer.php fix",
+		"php:lint": "find *.php . -name '*.php' ! -path './vendor/*' ! -path './var/*' ! -path '*node_modules/*' ! -path '*public/*' -print0 | xargs -0 -n 1 -P 4 php -l",
+		"php:stan": "phpstan --generate-baseline=phpstan-baseline.neon --allow-empty-baseline",
+		"sca": [
+			"@composer:normalize",
+			"@editorconfig:lint",
+			"@php:lint",
+			"@php:fixer",
+			"@php:stan",
+			"@yaml:lint"
+		],
+		"yaml:lint": "find ./ ! -path './vendor/*' ! -path '*/node_modules/*' \\( -name '*.yaml' -o -name '*.yml' \\) | xargs -r yaml-lint"
+	}
+}

@@ -1,0 +1,64 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JSON-Files
+[{*.json,.prettierrc}]
+indent_style = tab
+
+[*.md]
+indent_size = 2
+
+[*.{yaml,yml}]
+indent_size = 2
+
+[*.neon]
+indent_size = 2
+indent_style = tab
+
+[package.json]
+indent_size = 2
+
+[*.{typoscript,tsconfig}]
+indent_size = 2
+
+[*.xlf]
+indent_style = tab
+
+[*.sql]
+indent_style = tab
+indent_size = 2
+
+[{_.htaccess,.htaccess}]
+indent_style = tab
+
+[/var/**]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+
+[*.php]
+indent_style = unset
+
+[.ddev/**]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+
+# end of file

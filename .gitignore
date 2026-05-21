@@ -1,0 +1,15 @@
+node_modules/
+.idea
+.phpunit.cache
+coverage/
+public
+!Resources/Public
+vendor
+bin
+var/
+.Build
+config/system
+.tscache
+.claude
+php-cs-fixer.xml
+phpstan.xml
