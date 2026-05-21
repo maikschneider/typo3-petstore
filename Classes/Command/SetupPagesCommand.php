@@ -79,6 +79,9 @@ class SetupPagesCommand extends Command
                 slug: $page['slug'],
                 navHide: (int)$page['nav_hide'],
                 description: $page['description'],
+                isSiteroot: (int)$page['is_siteroot'],
+                backendLayout: $page['backend_layout'],
+                backendLayoutNextLevel: $page['backend_layout_next_level'],
             );
             $uidMap[$page['uid_ref']] = $uid;
             $io->text(sprintf('  <info>+</info> %-30s uid=%-4d pid=%d', $page['title'], $uid, $parentUid));
@@ -121,6 +124,9 @@ class SetupPagesCommand extends Command
         string $slug,
         int $navHide,
         string $description,
+        int $isSiteroot = 0,
+        string $backendLayout = '',
+        string $backendLayoutNextLevel = '',
     ): int {
         $now = time();
         $connection = $this->connectionPool->getConnectionForTable('pages');
@@ -131,6 +137,9 @@ class SetupPagesCommand extends Command
             'slug' => $slug,
             'nav_hide' => $navHide,
             'description' => $description,
+            'is_siteroot' => $isSiteroot,
+            'backend_layout' => $backendLayout,
+            'backend_layout_next_level' => $backendLayoutNextLevel,
             'tstamp' => $now,
             'crdate' => $now,
             'hidden' => 0,
