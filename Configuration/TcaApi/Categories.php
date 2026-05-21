@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use MaikSchneider\TcaApi\Enum\AccessRole;
+use MaikSchneider\TcaApi\Filter\SearchFilter;
 
 return [
     'general' => [
@@ -10,6 +11,15 @@ return [
         'resourceName' => 'categories',
         'resourceType' => 'Category',
         'operations' => ['list', 'show', 'create', 'update', 'delete'],
+    ],
+    'filters' => [
+        'q' => [
+            SearchFilter::class,
+            [
+                'columns' => ['name', 'description'],
+                'match'   => 'partial',
+            ],
+        ],
     ],
     'security' => [
         'list'   => AccessRole::PUBLIC,
