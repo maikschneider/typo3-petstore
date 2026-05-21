@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+$lll = 'LLL:EXT:typo3_petstore/Resources/Private/Language/locallang_customer.xlf:';
+
 return [
     'ctrl' => [
-        'title' => 'Petstore Customer',
+        'title' => $lll . 'title',
         'label' => 'username',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -12,7 +14,7 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-text-text.svg',
+        'iconfile' => 'EXT:typo3_petstore/Resources/Public/Icons/customer.svg',
         'security' => [
             'ignorePageTypeRestriction' => true,
         ],
@@ -45,7 +47,7 @@ return [
 
         // ── input ────────────────────────────────────────────────────────────
         'username' => [
-            'label' => 'Username (input)',
+            'label' => $lll . 'username',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -54,7 +56,7 @@ return [
             ],
         ],
         'first_name' => [
-            'label' => 'First Name (input)',
+            'label' => $lll . 'first_name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -62,7 +64,7 @@ return [
             ],
         ],
         'last_name' => [
-            'label' => 'Last Name (input)',
+            'label' => $lll . 'last_name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -70,7 +72,7 @@ return [
             ],
         ],
         'phone' => [
-            'label' => 'Phone (input)',
+            'label' => $lll . 'phone',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
@@ -80,7 +82,7 @@ return [
 
         // ── email ────────────────────────────────────────────────────────────
         'email' => [
-            'label' => 'Email Address (email)',
+            'label' => $lll . 'email',
             'config' => [
                 'type' => 'email',
             ],
@@ -88,7 +90,7 @@ return [
 
         // ── password ─────────────────────────────────────────────────────────
         'password_hash' => [
-            'label' => 'Password (password — hashed)',
+            'label' => $lll . 'password_hash',
             'config' => [
                 'type' => 'password',
                 'passwordPolicy' => 'default',
@@ -97,7 +99,7 @@ return [
 
         // ── text ─────────────────────────────────────────────────────────────
         'address' => [
-            'label' => 'Address (text)',
+            'label' => $lll . 'address',
             'config' => [
                 'type' => 'text',
                 'rows' => 4,
@@ -107,14 +109,14 @@ return [
 
         // ── select ───────────────────────────────────────────────────────────
         'user_status' => [
-            'label' => 'User Status (select/selectSingle — fixed items)',
+            'label' => $lll . 'user_status',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'Registered', 'value' => 0],
-                    ['label' => 'Active', 'value' => 1],
-                    ['label' => 'Suspended', 'value' => 2],
+                    ['label' => $lll . 'user_status.registered', 'value' => 0],
+                    ['label' => $lll . 'user_status.active',     'value' => 1],
+                    ['label' => $lll . 'user_status.suspended',  'value' => 2],
                 ],
                 'default' => 0,
             ],
@@ -122,7 +124,7 @@ return [
 
         // ── number ───────────────────────────────────────────────────────────
         'loyalty_points' => [
-            'label' => 'Loyalty Points (number/integer)',
+            'label' => $lll . 'loyalty_points',
             'config' => [
                 'type' => 'number',
                 'default' => 0,
@@ -134,7 +136,7 @@ return [
 
         // ── file ─────────────────────────────────────────────────────────────
         'profile_image' => [
-            'label' => 'Profile Image (file — single image)',
+            'label' => $lll . 'profile_image',
             'config' => [
                 'type' => 'file',
                 'maxitems' => 1,
@@ -144,7 +146,7 @@ return [
 
         // ── datetime ─────────────────────────────────────────────────────────
         'date_of_birth' => [
-            'label' => 'Date of Birth (datetime/date)',
+            'label' => $lll . 'date_of_birth',
             'config' => [
                 'type' => 'datetime',
                 'dbType' => 'date',

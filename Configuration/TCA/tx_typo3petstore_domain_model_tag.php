@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+$lll = 'LLL:EXT:typo3_petstore/Resources/Private/Language/locallang_tag.xlf:';
+
 return [
     'ctrl' => [
-        'title' => 'Petstore Tag',
+        'title' => $lll . 'title',
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -12,7 +14,7 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-text-text.svg',
+        'iconfile' => 'EXT:typo3_petstore/Resources/Public/Icons/tag.svg',
         'security' => [
             'ignorePageTypeRestriction' => true,
         ],
@@ -38,7 +40,7 @@ return [
             ],
         ],
         'name' => [
-            'label' => 'Name (input)',
+            'label' => $lll . 'name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -47,14 +49,14 @@ return [
             ],
         ],
         'color' => [
-            'label' => 'Tag Color (color)',
+            'label' => $lll . 'color',
             'config' => [
                 'type' => 'color',
                 'default' => '#6B7280',
             ],
         ],
         'description' => [
-            'label' => 'Description (text)',
+            'label' => $lll . 'description',
             'config' => [
                 'type' => 'text',
                 'rows' => 3,

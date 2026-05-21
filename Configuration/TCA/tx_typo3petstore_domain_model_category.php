@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+$lll = 'LLL:EXT:typo3_petstore/Resources/Private/Language/locallang_category.xlf:';
+
 return [
     'ctrl' => [
-        'title' => 'Petstore Category',
+        'title' => $lll . 'title',
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -12,7 +14,7 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-text-text.svg',
+        'iconfile' => 'EXT:typo3_petstore/Resources/Public/Icons/category.svg',
         'security' => [
             'ignorePageTypeRestriction' => true,
         ],
@@ -38,7 +40,7 @@ return [
             ],
         ],
         'name' => [
-            'label' => 'Name (input)',
+            'label' => $lll . 'name',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -47,7 +49,7 @@ return [
             ],
         ],
         'description' => [
-            'label' => 'Description (text)',
+            'label' => $lll . 'description',
             'config' => [
                 'type' => 'text',
                 'rows' => 5,
@@ -55,7 +57,7 @@ return [
             ],
         ],
         'parent_category' => [
-            'label' => 'Parent Category (select/foreign_table self-reference)',
+            'label' => $lll . 'parent_category',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -67,7 +69,7 @@ return [
             ],
         ],
         'icon' => [
-            'label' => 'Icon (file — single image)',
+            'label' => $lll . 'icon',
             'config' => [
                 'type' => 'file',
                 'maxitems' => 1,
@@ -75,14 +77,14 @@ return [
             ],
         ],
         'sort_order' => [
-            'label' => 'Sort Order (number/integer)',
+            'label' => $lll . 'sort_order',
             'config' => [
                 'type' => 'number',
                 'default' => 0,
             ],
         ],
         'badge_color' => [
-            'label' => 'Badge Color (color)',
+            'label' => $lll . 'badge_color',
             'config' => [
                 'type' => 'color',
                 'default' => '#3B82F6',

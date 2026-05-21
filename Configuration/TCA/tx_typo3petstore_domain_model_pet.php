@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+$lll = 'LLL:EXT:typo3_petstore/Resources/Private/Language/locallang_pet.xlf:';
+
 return [
     'ctrl' => [
-        'title' => 'Petstore Pet',
+        'title' => $lll . 'title',
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -14,7 +16,7 @@ return [
         ],
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
-        'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-text-text.svg',
+        'iconfile' => 'EXT:typo3_petstore/Resources/Public/Icons/pet.svg',
         'security' => [
             'ignorePageTypeRestriction' => true,
         ],
@@ -72,7 +74,7 @@ return [
 
         // ── input ────────────────────────────────────────────────────────────
         'name' => [
-            'label' => 'Name (input)',
+            'label' => $lll . 'name',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -81,7 +83,7 @@ return [
             ],
         ],
         'latin_name' => [
-            'label' => 'Latin / Scientific Name (input)',
+            'label' => $lll . 'latin_name',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -91,7 +93,7 @@ return [
 
         // ── text ─────────────────────────────────────────────────────────────
         'description' => [
-            'label' => 'Description (text + RTE)',
+            'label' => $lll . 'description',
             'config' => [
                 'type' => 'text',
                 'rows' => 8,
@@ -100,7 +102,7 @@ return [
             ],
         ],
         'care_notes' => [
-            'label' => 'Care Notes (text — plain textarea)',
+            'label' => $lll . 'care_notes',
             'config' => [
                 'type' => 'text',
                 'rows' => 5,
@@ -110,7 +112,7 @@ return [
 
         // ── number ───────────────────────────────────────────────────────────
         'price' => [
-            'label' => 'Price (number/decimal)',
+            'label' => $lll . 'price',
             'config' => [
                 'type' => 'number',
                 'format' => 'decimal',
@@ -118,7 +120,7 @@ return [
             ],
         ],
         'weight_kg' => [
-            'label' => 'Weight in kg (number/decimal)',
+            'label' => $lll . 'weight_kg',
             'config' => [
                 'type' => 'number',
                 'format' => 'decimal',
@@ -126,7 +128,7 @@ return [
             ],
         ],
         'stock_quantity' => [
-            'label' => 'Stock Quantity (number/integer)',
+            'label' => $lll . 'stock_quantity',
             'config' => [
                 'type' => 'number',
                 'default' => 1,
@@ -138,20 +140,20 @@ return [
 
         // ── select ───────────────────────────────────────────────────────────
         'status' => [
-            'label' => 'Status (select/selectSingle — fixed items)',
+            'label' => $lll . 'status',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'Available', 'value' => 'available'],
-                    ['label' => 'Pending', 'value' => 'pending'],
-                    ['label' => 'Sold', 'value' => 'sold'],
+                    ['label' => $lll . 'status.available', 'value' => 'available'],
+                    ['label' => $lll . 'status.pending',   'value' => 'pending'],
+                    ['label' => $lll . 'status.sold',      'value' => 'sold'],
                 ],
                 'default' => 'available',
             ],
         ],
         'category_id' => [
-            'label' => 'Category (select/selectSingle — foreign table)',
+            'label' => $lll . 'category_id',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -163,7 +165,7 @@ return [
             ],
         ],
         'related_pets' => [
-            'label' => 'Related Pets (select/selectMultipleSideBySide — MM self-reference)',
+            'label' => $lll . 'related_pets',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
@@ -176,13 +178,13 @@ return [
 
         // ── radio ────────────────────────────────────────────────────────────
         'gender' => [
-            'label' => 'Gender (radio)',
+            'label' => $lll . 'gender',
             'config' => [
                 'type' => 'radio',
                 'items' => [
-                    ['label' => 'Male', 'value' => 'male'],
-                    ['label' => 'Female', 'value' => 'female'],
-                    ['label' => 'Unknown', 'value' => 'unknown'],
+                    ['label' => $lll . 'gender.male',    'value' => 'male'],
+                    ['label' => $lll . 'gender.female',  'value' => 'female'],
+                    ['label' => $lll . 'gender.unknown', 'value' => 'unknown'],
                 ],
                 'default' => 'unknown',
             ],
@@ -190,7 +192,7 @@ return [
 
         // ── check ────────────────────────────────────────────────────────────
         'is_vaccinated' => [
-            'label' => 'Vaccinated (check/toggle)',
+            'label' => $lll . 'is_vaccinated',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -200,21 +202,21 @@ return [
             ],
         ],
         'features' => [
-            'label' => 'Features (check/multi-checkbox)',
+            'label' => $lll . 'features',
             'config' => [
                 'type' => 'check',
                 'items' => [
-                    ['label' => 'Microchipped'],
-                    ['label' => 'Neutered'],
-                    ['label' => 'House Trained'],
-                    ['label' => 'Good with Kids'],
+                    ['label' => $lll . 'features.microchipped'],
+                    ['label' => $lll . 'features.neutered'],
+                    ['label' => $lll . 'features.house_trained'],
+                    ['label' => $lll . 'features.good_with_kids'],
                 ],
             ],
         ],
 
         // ── datetime ─────────────────────────────────────────────────────────
         'birth_date' => [
-            'label' => 'Birth Date (datetime/date)',
+            'label' => $lll . 'birth_date',
             'config' => [
                 'type' => 'datetime',
                 'dbType' => 'date',
@@ -222,13 +224,13 @@ return [
             ],
         ],
         'available_from' => [
-            'label' => 'Available From (datetime/unix timestamp)',
+            'label' => $lll . 'available_from',
             'config' => [
                 'type' => 'datetime',
             ],
         ],
         'feeding_time' => [
-            'label' => 'Feeding Time (datetime/time)',
+            'label' => $lll . 'feeding_time',
             'config' => [
                 'type' => 'datetime',
                 'dbType' => 'time',
@@ -238,7 +240,7 @@ return [
 
         // ── file ─────────────────────────────────────────────────────────────
         'photos' => [
-            'label' => 'Photos (file — multiple images)',
+            'label' => $lll . 'photos',
             'config' => [
                 'type' => 'file',
                 'allowed' => 'jpg,jpeg,png,gif,webp',
@@ -246,7 +248,7 @@ return [
             ],
         ],
         'health_certificate' => [
-            'label' => 'Health Certificate (file — single PDF)',
+            'label' => $lll . 'health_certificate',
             'config' => [
                 'type' => 'file',
                 'allowed' => 'pdf',
@@ -256,7 +258,7 @@ return [
 
         // ── link ─────────────────────────────────────────────────────────────
         'owner_website' => [
-            'label' => 'Owner Website (link)',
+            'label' => $lll . 'owner_website',
             'config' => [
                 'type' => 'link',
             ],
@@ -264,7 +266,7 @@ return [
 
         // ── color ────────────────────────────────────────────────────────────
         'highlight_color' => [
-            'label' => 'Highlight Color (color)',
+            'label' => $lll . 'highlight_color',
             'config' => [
                 'type' => 'color',
                 'default' => '',
@@ -273,7 +275,7 @@ return [
 
         // ── email ────────────────────────────────────────────────────────────
         'contact_email' => [
-            'label' => 'Contact Email (email)',
+            'label' => $lll . 'contact_email',
             'config' => [
                 'type' => 'email',
             ],
@@ -281,7 +283,7 @@ return [
 
         // ── slug ─────────────────────────────────────────────────────────────
         'url_slug' => [
-            'label' => 'URL Slug (slug)',
+            'label' => $lll . 'url_slug',
             'config' => [
                 'type' => 'slug',
                 'generatorOptions' => [
@@ -295,7 +297,7 @@ return [
 
         // ── uuid ─────────────────────────────────────────────────────────────
         'external_id' => [
-            'label' => 'External ID (uuid)',
+            'label' => $lll . 'external_id',
             'config' => [
                 'type' => 'uuid',
             ],
@@ -303,7 +305,7 @@ return [
 
         // ── json ─────────────────────────────────────────────────────────────
         'metadata' => [
-            'label' => 'Metadata (json)',
+            'label' => $lll . 'metadata',
             'config' => [
                 'type' => 'json',
             ],
@@ -311,7 +313,7 @@ return [
 
         // ── flex ─────────────────────────────────────────────────────────────
         'extra_settings' => [
-            'label' => 'Extra Settings (flex)',
+            'label' => $lll . 'extra_settings',
             'config' => [
                 'type' => 'flex',
                 'ds' => [
@@ -324,21 +326,21 @@ return [
                 <sheetTitle>Breed Details</sheetTitle>
                 <el>
                     <settings.breed>
-                        <label>Breed (input)</label>
+                        <label>Breed</label>
                         <config>
                             <type>input</type>
                             <size>30</size>
                         </config>
                     </settings.breed>
                     <settings.origin_country>
-                        <label>Origin Country (input)</label>
+                        <label>Origin Country</label>
                         <config>
                             <type>input</type>
                             <size>30</size>
                         </config>
                     </settings.origin_country>
                     <settings.coat_length>
-                        <label>Coat Length (select)</label>
+                        <label>Coat Length</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -359,7 +361,7 @@ return [
                         </config>
                     </settings.coat_length>
                     <settings.special_diet>
-                        <label>Special Diet Required (check)</label>
+                        <label>Special Diet Required</label>
                         <config>
                             <type>check</type>
                             <renderType>checkboxToggle</renderType>
@@ -381,7 +383,7 @@ return [
 
         // ── category (system categories) ─────────────────────────────────────
         'categories' => [
-            'label' => 'TYPO3 System Categories (category)',
+            'label' => $lll . 'categories',
             'config' => [
                 'type' => 'category',
             ],
@@ -389,7 +391,7 @@ return [
 
         // ── group (MM relation to tags) ───────────────────────────────────────
         'tags' => [
-            'label' => 'Tags (group + MM many-to-many)',
+            'label' => $lll . 'tags',
             'config' => [
                 'type' => 'group',
                 'allowed' => 'tx_typo3petstore_domain_model_tag',
@@ -401,7 +403,7 @@ return [
 
         // ── inline (1:N orders) ───────────────────────────────────────────────
         'orders' => [
-            'label' => 'Orders (inline 1:N)',
+            'label' => $lll . 'orders',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_typo3petstore_domain_model_order',

@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+$lll = 'LLL:EXT:typo3_petstore/Resources/Private/Language/locallang_order.xlf:';
+
 return [
     'ctrl' => [
-        'title' => 'Petstore Order',
+        'title' => $lll . 'title',
         'label' => 'customer_name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -12,7 +14,7 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-text-text.svg',
+        'iconfile' => 'EXT:typo3_petstore/Resources/Public/Icons/order.svg',
         'security' => [
             'ignorePageTypeRestriction' => true,
         ],
@@ -43,9 +45,9 @@ return [
             ],
         ],
 
-        // ── group (M:1 pet reference) ─────────────────────────────────────────
+        // ── group ────────────────────────────────────────────────────────────
         'pet_id' => [
-            'label' => 'Pet (group — M:1 record reference)',
+            'label' => $lll . 'pet_id',
             'config' => [
                 'type' => 'group',
                 'allowed' => 'tx_typo3petstore_domain_model_pet',
@@ -57,7 +59,7 @@ return [
 
         // ── number ───────────────────────────────────────────────────────────
         'quantity' => [
-            'label' => 'Quantity (number/integer)',
+            'label' => $lll . 'quantity',
             'config' => [
                 'type' => 'number',
                 'default' => 1,
@@ -67,7 +69,7 @@ return [
             ],
         ],
         'total_price' => [
-            'label' => 'Total Price (number/decimal)',
+            'label' => $lll . 'total_price',
             'config' => [
                 'type' => 'number',
                 'format' => 'decimal',
@@ -77,15 +79,15 @@ return [
 
         // ── select ───────────────────────────────────────────────────────────
         'status' => [
-            'label' => 'Order Status (select/selectSingle — fixed items)',
+            'label' => $lll . 'status',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'Placed', 'value' => 'placed'],
-                    ['label' => 'Approved', 'value' => 'approved'],
-                    ['label' => 'Delivered', 'value' => 'delivered'],
-                    ['label' => 'Cancelled', 'value' => 'cancelled'],
+                    ['label' => $lll . 'status.placed',    'value' => 'placed'],
+                    ['label' => $lll . 'status.approved',  'value' => 'approved'],
+                    ['label' => $lll . 'status.delivered', 'value' => 'delivered'],
+                    ['label' => $lll . 'status.cancelled', 'value' => 'cancelled'],
                 ],
                 'default' => 'placed',
             ],
@@ -93,7 +95,7 @@ return [
 
         // ── check ────────────────────────────────────────────────────────────
         'complete' => [
-            'label' => 'Order Complete (check/toggle)',
+            'label' => $lll . 'complete',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -105,7 +107,7 @@ return [
 
         // ── input ────────────────────────────────────────────────────────────
         'customer_name' => [
-            'label' => 'Customer Name (input)',
+            'label' => $lll . 'customer_name',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -113,7 +115,7 @@ return [
             ],
         ],
         'customer_phone' => [
-            'label' => 'Customer Phone (input)',
+            'label' => $lll . 'customer_phone',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
@@ -123,7 +125,7 @@ return [
 
         // ── email ────────────────────────────────────────────────────────────
         'customer_email' => [
-            'label' => 'Customer Email (email)',
+            'label' => $lll . 'customer_email',
             'config' => [
                 'type' => 'email',
             ],
@@ -131,7 +133,7 @@ return [
 
         // ── text ─────────────────────────────────────────────────────────────
         'shipping_address' => [
-            'label' => 'Shipping Address (text)',
+            'label' => $lll . 'shipping_address',
             'config' => [
                 'type' => 'text',
                 'rows' => 4,
@@ -141,14 +143,14 @@ return [
 
         // ── datetime ─────────────────────────────────────────────────────────
         'ship_date' => [
-            'label' => 'Ship Date (datetime/datetime)',
+            'label' => $lll . 'ship_date',
             'config' => [
                 'type' => 'datetime',
                 'dbType' => 'datetime',
             ],
         ],
         'delivery_date' => [
-            'label' => 'Delivery Date (datetime/date)',
+            'label' => $lll . 'delivery_date',
             'config' => [
                 'type' => 'datetime',
                 'dbType' => 'date',
