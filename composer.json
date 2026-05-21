@@ -19,8 +19,15 @@
 	],
 	"require": {
 		"php": "^8.2",
+		"maikschneider/tca-api": "dev-main",
 		"typo3/cms-core": "^13.4 || ^14.3"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/maikschneider/tca-api"
+		}
+	],
 	"require-dev": {
 		"armin/editorconfig-cli": "^2.1",
 		"ergebnis/composer-normalize": "^2.45",
