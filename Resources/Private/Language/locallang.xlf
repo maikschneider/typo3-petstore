@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:typo3_petstore/Resources/Private/Language/locallang.xlf">
+		<header/>
+		<body>
+			<trans-unit id="mlang_labels_tablabel.tx_typo3petstore_domain_model_pet">
+				<source>Petstore Pet</source>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr.tx_typo3petstore_domain_model_pet">
+				<source>A pet in the store — the main demo model showcasing all TYPO3 TCA field types.</source>
+			</trans-unit>
+
+			<trans-unit id="mlang_labels_tablabel.tx_typo3petstore_domain_model_category">
+				<source>Petstore Category</source>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr.tx_typo3petstore_domain_model_category">
+				<source>A pet category (e.g. Dogs, Cats, Birds) with optional parent for hierarchy.</source>
+			</trans-unit>
+
+			<trans-unit id="mlang_labels_tablabel.tx_typo3petstore_domain_model_tag">
+				<source>Petstore Tag</source>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr.tx_typo3petstore_domain_model_tag">
+				<source>A tag that can be applied to multiple pets via an MM relation.</source>
+			</trans-unit>
+
+			<trans-unit id="mlang_labels_tablabel.tx_typo3petstore_domain_model_order">
+				<source>Petstore Order</source>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr.tx_typo3petstore_domain_model_order">
+				<source>A customer order for a pet — linked to Pet via inline 1:N from the Pet side.</source>
+			</trans-unit>
+
+			<trans-unit id="mlang_labels_tablabel.tx_typo3petstore_domain_model_customer">
+				<source>Petstore Customer</source>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr.tx_typo3petstore_domain_model_customer">
+				<source>A customer who can place orders — demonstrates the password field type.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
