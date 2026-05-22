@@ -11,7 +11,7 @@ page {
   )
   10.dataWrap = <div id="root" data-api-prefix="{$tca_api.apiPrefix}">|</div>
 
-  includeJS.apiPlatformAdmin = EXT:typo3_petstore/Resources/Public/ApiPlatformAdmin/index.js
+  includeJS.apiPlatformAdmin = EXT:typo3_petstore/Resources/Public/ApiPlatformAdmin/dist/index.js
   includeJS.apiPlatformAdmin.type = module
 
   includeCSS.apiPlatformAdminFonts = EXT:typo3_petstore/Resources/Public/ApiPlatformAdmin/fonts.css

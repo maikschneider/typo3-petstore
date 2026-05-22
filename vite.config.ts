@@ -1,7 +1,7 @@
 import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
+import {resolve} from "path";
 
-// Source root is Resources/Private/ApiPlatformAdmin; outDir is relative to that root.
 export default defineConfig(({mode}) => ({
     plugins: [react()],
     root: "Resources/Private/ApiPlatformAdmin",
@@ -10,10 +10,11 @@ export default defineConfig(({mode}) => ({
         host: true,
     },
     build: {
-        outDir: "../../Public/ApiPlatformAdmin",
+        outDir: "../../Public/ApiPlatformAdmin/dist",
         emptyOutDir: true,
         sourcemap: mode === "development",
         rollupOptions: {
+            input: resolve(__dirname, "Resources/Private/ApiPlatformAdmin/src/index.tsx"),
             output: {
                 entryFileNames: "index.js",
                 assetFileNames: "[name][extname]",
