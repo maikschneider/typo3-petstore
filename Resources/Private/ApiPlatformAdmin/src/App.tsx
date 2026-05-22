@@ -3,7 +3,7 @@ import React from "react";
 import { AdminUI } from "react-admin";
 import { SmartListGuesser } from "./SmartListGuesser";
 
-const ENTRYPOINT = window.location.origin + "/_api/";
+const ENTRYPOINT = window.location.origin + document.getElementById('root')?.getAttribute('data-api-prefix');
 
 // useEmbedded: false — replace embedded relation objects with their @id strings so
 // ReferenceField / ReferenceArrayField receive plain IRI strings, not full objects.
