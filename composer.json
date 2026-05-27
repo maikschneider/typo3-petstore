@@ -35,12 +35,6 @@
 		"typo3/minimal": "^13.4 || ^14.0",
 		"typo3/theme-camino": "^14.3"
 	},
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/maikschneider/tca-api"
-		}
-	],
 	"autoload": {
 		"psr-4": {
 			"MaikSchneider\\Typo3Petstore\\": "Classes"
