@@ -1,6 +1,6 @@
 import {InputGuesser} from "@api-platform/admin";
 import {useRecordContext} from "react-admin";
-import {TcaImageField} from "./TcaImageField";
+import {isFileValue, TcaImageField} from "./TcaImageField";
 
 interface Props {
     source: string;
@@ -16,13 +16,7 @@ export const SmartInputGuesser = ({source, ...props}: Props) => {
     const record = useRecordContext();
     const value = record?.[source];
 
-    if (
-        value !== null &&
-        value !== undefined &&
-        typeof value === "object" &&
-        !Array.isArray(value) &&
-        "publicUrl" in value
-    ) {
+    if (isFileValue(value)) {
         return (
             <div style={{marginBottom: 16}}>
                 <TcaImageField source={source} height={80} />
