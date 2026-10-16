@@ -12,6 +12,7 @@ return [
         'resourceName' => 'pets',
         'resourceType' => 'Pet',
         'operations' => ['list', 'show', 'create', 'update', 'delete'],
+        'storagePid' => 2,
     ],
     'filters' => [
         'status' => ExactFilter::class,

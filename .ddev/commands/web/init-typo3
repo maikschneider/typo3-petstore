@@ -83,5 +83,5 @@ _done
 echo ""
 echo -e "\e[32mPetstore initialised.\e[39m"
 echo "  Backend: https://typo3-petstore.ddev.site/typo3"
-echo "  Login:   admin / admin1234!"
+echo "  Login:   admin / $TYPO3_SETUP_ADMIN_PASSWORD"
 echo "  API:     https://typo3-petstore.ddev.site/_api/"

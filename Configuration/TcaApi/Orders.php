@@ -12,6 +12,7 @@ return [
         'resourceName' => 'orders',
         'resourceType' => 'Order',
         'operations' => ['list', 'show', 'create', 'update', 'delete'],
+        'storagePid' => 2,
     ],
     'filters' => [
         'status' => ExactFilter::class,

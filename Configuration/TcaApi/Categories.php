@@ -11,6 +11,7 @@ return [
         'resourceName' => 'categories',
         'resourceType' => 'Category',
         'operations' => ['list', 'show', 'create', 'update', 'delete'],
+        'storagePid' => 2,
     ],
     'filters' => [
         'q' => [

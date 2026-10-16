@@ -12,6 +12,7 @@ return [
         'resourceName' => 'customers',
         'resourceType' => 'Customer',
         'operations' => ['list', 'show', 'create', 'update', 'delete'],
+        'storagePid' => 2,
     ],
     'filters' => [
         'username' => ExactFilter::class,

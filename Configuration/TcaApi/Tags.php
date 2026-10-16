@@ -11,6 +11,7 @@ return [
         'resourceName' => 'tags',
         'resourceType' => 'Tag',
         'operations' => ['list', 'show', 'create', 'update', 'delete'],
+        'storagePid' => 2,
     ],
     'filters' => [
         'q' => [
